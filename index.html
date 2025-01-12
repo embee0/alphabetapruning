@@ -12,6 +12,7 @@
     <meta property="og:type" content="website">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/5.0.12/bootstrap-slider.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/seedrandom/2.4.4/seedrandom.min.js"></script>
     <script src="app.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/5.0.12/css/bootstrap-slider.min.css">
@@ -110,6 +111,14 @@
                 <button ng-click="incrBranchingFactor(-1)" type="button" class="btn btn-default">-</button>
                 <button ng-click="incrBranchingFactor(1)" type="button" class="btn btn-default">+</button>
               </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6 button-label-container text-right">
+              <label class="button-label">Random Seed</label>
+            </div>
+            <div class="col-sm-6">
+              <input type="number" ng-model="randomSeed" class="form-control" placeholder="Enter seed (0 for random)">
             </div>
           </div>
           <hr/>
