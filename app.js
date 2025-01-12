@@ -447,6 +447,10 @@ angular.module('abTreePractice', ['d3', 'Enums', 'Tree'])
     $scope.setUseAb = function(bool) {
       $scope.useAb = bool;
     }
+    $scope.showCtrlPanel = true;
+    $scope.setShowCtrlPanel = function(bool) {
+      $scope.showCtrlPanel = bool;
+    }
     $scope.maxVal = 20;
 
     $scope.generateRootNode = function(maxFirst) {

@@ -25,6 +25,7 @@
           <span class="navbar-brand">Alpha-Beta Pruning Practice</span>
         </div>
         <div class="nav navbar-nav navbar-right">
+          <li ng-click="setShowCtrlPanel(!showCtrlPanel)" class="{{showCtrlPanel ? 'active' : ''}}"><a>Menüfeld {{showCtrlPanel ? "verstecken" : "anzeigen"}}</a></li>
           <li ng-click="setUseAb(true)" class="{{useAb ? 'active' : ''}}"><a>αβ</a></li>
           <li ng-click="setUseAb(false)" class="{{!useAb ? 'active' : ''}}"><a>Cutoff</a></li>
         </div>
@@ -32,7 +33,7 @@
     </nav>
     <div class="container-fluid nopadding">
       <ab-tree class="ab-tree" tree="tree" use-ab="useAb" re-render="reRender"></ab-tree>
-      <div class="container-fluid ctrl-panel">
+      <div class="container-fluid ctrl-panel {{showCtrlPanel ? '' : 'hidden'}}">
         <div class="row text-center">
           <button ng-click="toggleABVisual()" type="button" class="btn btn-default">
             {{actionLQ.inAction ? 'Stop' : 'Start'}} Animation
