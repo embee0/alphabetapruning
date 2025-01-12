@@ -433,7 +433,7 @@ angular.module('Tree', ['Enums', 'ActionListQueue'])
 
   }]);
 
-angular.module('abTreePractice', ['d3', 'Enums', 'Tree'])
+angular.module('abTreePractice', ['d3', 'Enums', 'Tree', 'ActionListQueue'])
   .controller('MainCtrl', [
       'EnumService',
       'TreeService',
@@ -453,7 +453,17 @@ angular.module('abTreePractice', ['d3', 'Enums', 'Tree'])
     }
     $scope.maxVal = 20;
 
+    $scope.randomSeed = 0;
+
+    function setRandomSeed(seed) {
+      if (seed === 0 || seed === undefined || seed === null) {
+        seed = Math.floor(Math.random() * 1000000);
+      }
+      Math.seedrandom(seed);
+    }
+
     $scope.generateRootNode = function(maxFirst) {
+      setRandomSeed($scope.randomSeed);
       $scope.tree.rootNode = Tree.generateABTreeRootNode(
         $scope.tree.treeType,
         $scope.tree.depth,
