@@ -147,21 +147,21 @@ path.mouselink {
 
 g.node path {
   cursor: pointer;
-  fill: #FFF;
+  fill: #EEE;
   stroke: #000;
 }
 g.node path:hover {
-  fill: #EEE;
+  fill: #FFF;
 }
 g.node.entered path {
   fill: #EEFFEE;
 }
 
 g.node.leaf path {
-  fill: #FFF;
+  fill: #EEE;
 }
 g.node.leaf path:hover {
-  fill: #EEE;
+  fill: #FFF;
 }
 g.node.entered.leaf path {
   fill: #EEEEFF;
