@@ -2,7 +2,7 @@
 <html lang="en" ng-app="abTreePractice">
   <head>
     <meta charset="utf-8">
-    <title>Alpha-Beta Pruning Practice</title>
+    <title>Alpha-Beta-Pruning visualisieren und üben</title>
     <meta name="description" content="D3.js web app for visualizing and understanding the Alpha-Beta Pruning algorithm. Developed for UC Berkeley's CS61B.">
     <link rel="canonical" href="http://alphabeta.alekskamko.com">
     <meta property="og:title" content="Alpha-Beta Pruning Practice">
@@ -22,7 +22,7 @@
     <nav class="navbar navbar-inverse navbar-static-top nomargin" role="navigation">
       <div class="container-fluid">
         <div class="navbar-header">
-          <span class="navbar-brand">Alpha-Beta Pruning Practice</span>
+          <span class="navbar-brand">Alpha-Beta-Pruning visualisieren und üben</span>
         </div>
         <div class="nav navbar-nav navbar-right">
           <li ng-click="setShowCtrlPanel(!showCtrlPanel)" class="{{showCtrlPanel ? 'active' : ''}}"><a>Menüfeld {{showCtrlPanel ? "verstecken" : "anzeigen"}}</a></li>
@@ -36,7 +36,7 @@
       <div class="container-fluid ctrl-panel {{showCtrlPanel ? '' : 'hidden'}}">
         <div class="row text-center">
           <button ng-click="toggleABVisual()" type="button" class="btn btn-default">
-            {{actionLQ.inAction ? 'Stop' : 'Start'}} Animation
+            Animation {{actionLQ.inAction ? 'stoppen' : 'starten'}} 
           </button>
         </div>
         <div class="{{actionLQ.inAction ? '' : 'hidden'}}">
@@ -76,7 +76,7 @@
             </div>
           </div>
           <div class="row text-center">
-            <label class="slider-label left">Slow</label>
+            <label class="slider-label left">Langsam</label>
             <input class="slider"
                    type="text"
                    data-placement="bottom"
@@ -85,14 +85,14 @@
                    data-slider-step="25"
                    data-slider-value="850"
             />
-            <label class="slider-label right">Fast</label>
+            <label class="slider-label right">Schnell</label>
           </div>
         </div>
         <div class="{{actionLQ.inAction ? 'hidden' : ''}}">
           <hr/>
           <div class="row">
             <div class="col-sm-6 button-label-container text-right">
-              <label class="button-label">Depth</label>
+              <label class="button-label">Tiefe</label>
             </div>
             <div class="col-sm-6">
               <div class="btn-group">
@@ -115,27 +115,27 @@
           <hr/>
           <div class="row">
             <div class="col-sm-6 text-right">
-              <button ng-click="flipMax()" type="button" class="btn btn-default">Swap Min/Max</button>
+              <button ng-click="flipMax()" type="button" class="btn btn-default">Min/Max tauschen</button>
             </div>
             <div class="col-sm-6 text-left">
-              <button ng-click="generateRootNode()" type="button" class="btn btn-default">Regenerate Tree</button>
+              <button ng-click="generateRootNode()" type="button" class="btn btn-default">Neuer Baum</button>
             </div>
           </div>
           <div class="row">
             <div class="col-sm-6 text-right">
-              <button ng-disabled="actionLQ.inAction" ng-click="resetTree()" type="button" class="btn btn-default">Reset Tree</button>
+              <button ng-disabled="actionLQ.inAction" ng-click="resetTree()" type="button" class="btn btn-default">Zurücksetzen</button>
             </div>
             <div class="col-sm-6 text-left">
-              <button ng-disabled="actionLQ.inAction" ng-click="showSolution()" type="button" class="btn btn-default">Show Solution</button>
+              <button ng-disabled="actionLQ.inAction" ng-click="showSolution()" type="button" class="btn btn-default">Lösung zeigen</button>
             </div>
           </div>
           <div class="row">
             <div class="col-sm-6 text-right">
-              <button ng-disabled="actionLQ.inAction" ng-click="checkAnswer()" type="button" class="btn btn-default">Check Answer</button>
+              <button ng-disabled="actionLQ.inAction" ng-click="checkAnswer()" type="button" class="btn btn-default">Antwort prüfen</button>
             </div>
             <div class="col-sm-6 button-label-container">
               <label class="button-label answer-{{correct}}">
-                  {{(correct == null) ? '--' : (correct ? 'Correct!' : 'Incorrect')}}
+                  {{(correct == null) ? '--' : (correct ? 'Korrekt!' : 'Inkorrekt')}}
                 </label>
             </div>
           </div>
@@ -150,11 +150,11 @@
         stargazers on GitHub" aria-label="Star aykamko/abTreePractice on GitHub"
       >Star</a>
       <span>Developed by <a href="http://alekskamko.com">Aleks Kamko</a> for UC Berkeley <a
-          href="http://inst.eecs.berkeley.edu/~cs61b/">CS61B</a>
+          href="http://inst.eecs.berkeley.edu/~cs61b/">CS61B</a>. Kleine Erweiterungen von M. Brenner für die Verwendung im Unterricht.</span>
 	  </span>
     </div>
     <div class="prune-info">
-      <span>Nodes are pruned when {{useAb ? 'β ≤ α' : 'value is in cutoff range'}}.</span>
+      <span>Knoten werden "gepruned", wenn {{useAb ? 'β ≤ α' : 'Wert im Cutoff-Bereich liegt'}}.</span>
     </div>
   </body>
 </html>
