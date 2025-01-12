@@ -443,7 +443,7 @@ angular.module('abTreePractice', ['d3', 'Enums', 'Tree', 'ActionListQueue'])
     var TreeNodeTypeEnum = EnumService.TreeNodeTypeEnum;
     var Tree = TreeService.Tree;
 
-    $scope.useAb = true;
+    $scope.useAb = false;
     $scope.setUseAb = function(bool) {
       $scope.useAb = bool;
     }
@@ -453,7 +453,7 @@ angular.module('abTreePractice', ['d3', 'Enums', 'Tree', 'ActionListQueue'])
     }
     $scope.maxVal = 20;
 
-    $scope.randomSeed = 0;
+    $scope.randomSeed = null;
 
     function setRandomSeed(seed) {
       if (seed === 0 || seed === undefined || seed === null) {
